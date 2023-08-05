@@ -76,17 +76,22 @@ app.use('/login',(req,res,next)=>{
 })
 
 app.get('/message',(req,res,next)=>{
+    fs.readFile('message.txt',(err,data)=>{
     res.send(`<form onsubmit="document.getElementById('username').value=localStorage.getItem('username');" action="/message" method="POST"><h4>${data}</h4><input type="text" name="message" id="message"></input><input type ="hidden" name="username" id="username"></input><button type="submit">send</button></form>`)
+
+    })
 })
 
 app.post('/message',(req,res,next)=>{
-    data.push(`{${req.body.username}:${req.body.message}}`)
-    console.log(data)
-    for(let i=0;i<data.length;i++){
-        fs.appendFileSync('message.txt',data[i]);
-    }
-    console.log(`${req.body.username}:${req.body.message}`)
-    res.redirect('/message')
+
+    const message = `${req.body.username}:${req.body.message}`
+
+    fs.appendFile('message.txt',message,(err)=>{  
+        res.redirect('/message')
+
+    })
+
+  
 })
 
 

@@ -1,0 +1,28 @@
+{
+  "name": "kickstartingnodejs",
+  "version": "1.0.0",
+  "description": "complete node js guide",
+  "main": "first.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon first.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/divyanshu4757/kickstarting_nodejs.git"
+  },
+  "author": "divyanshu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/divyanshu4757/kickstarting_nodejs/issues"
+  },
+  "homepage": "https://github.com/divyanshu4757/kickstarting_nodejs#readme",
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  },
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "cookie-parser": "^1.4.6",
+    "express": "^4.18.2"
+  }
+}
